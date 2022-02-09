@@ -1,5 +1,6 @@
 #1 update Values in Dictionaries and Lists
 
+
 x = [ [5,2,3], [10,8,9] ] 
 x[1][0] = 15
 print(x)
@@ -24,6 +25,7 @@ z = [ {'x': 10, 'y': 20} ]
 z[0]['y'] = 30
 print(z)
 
+
 # 2 Iterate Through a List of Dictionaries
 
 students = [
@@ -32,16 +34,18 @@ students = [
          {'first_name' : 'Mark', 'last_name' : 'Guillen'},
          {'first_name' : 'KB', 'last_name' : 'Tonel'}
     ]
-def iterateDictionary(students):
-   for indx in range(len(students)):
-       for key in students[indx]:
-           val = students[indx][key]
-           print(f"{key} - {val}")
-           
+
+def iterateDictionary(some_list):
+    for dict in some_list:
+        for key in dict:
+            print(f"{key} - {dict[key]}")
 
 iterateDictionary(students)
 
+
 #3 Get Values From a List of Dictionaries
+
+
 students = [
          {'first_name':  'Michael', 'last_name' : 'Jordan'},
          {'first_name' : 'John', 'last_name' : 'Rosales'},
@@ -50,14 +54,12 @@ students = [
     ] 
 
 def iterateDictionary2(key_name, some_list):
-    for indx in range(len(some_list)):
-       for key in some_list[indx]:
-           if key == key_name:
-               print(some_list[indx][key])
-        
-           
+    for dict in some_list:
+        print(dict[key_name])
 
-iterateDictionary2('last_name', students)
+
+iterateDictionary2('first_name', students)
+
 
 #4. Iterate Through a Dictionary with List Values
 
@@ -68,13 +70,9 @@ dojo = {
 
 def printInfo(some_dict):
     for key in some_dict:
-        list_length = len(some_dict[key])
-        list = some_dict[key]
-        print(f"{list_length} {key}")
-        for indx in range(len(list)):
-            list_val = list[indx]                        
-            print(list_val)
+        print(len(some_dict[key]), key.upper())
+        for item in some_dict[key]:
+            print(item)
+        print("")
 
 printInfo(dojo)
-
-
